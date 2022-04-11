@@ -1,0 +1,29 @@
+<div class="row" style="background: linear-gradient(90deg, #620439 0%, #8799f7 100%);">
+    <div class="col-6">
+        <img src="http://localhost:3000/image/cakes/{{cake._id}}.jpg" class="card-img-top m-3" alt="" width="100%">
+    </div>
+    <div class="col-6">
+        <h2 class="card-title" style="color: #330921;">{{cake.name}}</h2>
+        <br>
+        <div class="row">
+            <div class="col">
+                <span class="fw-bold m-3">Main ingredients:</span>
+                <span class="card-text" style="font-weight: 600;">{{cake.ingredients}}</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <span class="fw-bold m-3">Origin:</span>
+                <span class="card-text m-3">{{cake.origin}}</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <p class="card-text m-3">{{cake.description}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

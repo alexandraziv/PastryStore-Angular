@@ -1,0 +1,18 @@
+<!--<div class="card" (click)="changeRoute()" [routerLink]="[cake._id]">
+    <div class="col">
+        <img src="http://localhost:3000/image/cakes/{{cake._id}}.jpg"  alt="">
+        <h5 class="card-title text-center">{{cake.name}}</h5>
+        <p class="card-text text-center">{{cake.ingredients}}</p>
+    </div>
+</div>-->
+<br>
+<br>
+<section class="card" (click)="changeRoute()" [routerLink]="[cake._id]">
+    <div>
+      <figure>
+        <img src="http://localhost:3000/image/cakes/{{cake._id}}.jpg"  alt="" />
+        <figcaption class="name">{{cake.name}}</figcaption>
+        <figcaption>{{cake.ingredients}}</figcaption>
+      </figure>
+    </div>
+  </section>

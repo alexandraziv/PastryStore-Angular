@@ -1,0 +1,51 @@
+
+<br>
+<div class="row">
+	<form [formGroup]="userForm" (submit)="onSubmit()" novalidate class="col-8 offset-2"
+    action="http://www.thezarichi.com/testbed/form-response.php" method="post">
+		<!--INPUT TEKST POLJE-->
+		<div class="form-group row">
+		  <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+		  <div class="col-sm-9">
+			<input formControlName="firstName" type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your name" [(ngModel)]="user.firstName">
+			<small *ngIf="userForm.controls['firstName'].touched 
+				&& userForm.controls['firstName'].errors?.['required']" class="text-white">
+				Field is required</small>
+		  </div>
+		</div>
+		<br>
+		<br>
+		<!--INPUT TEKST-->
+		<div class="form-group row">
+			<label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+			<div class="col-sm-9">
+			  <input formControlName="lastName" type="lastName" class="form-control" id="lastName" name="lastName" placeholder="lastName" [(ngModel)]="user.lastName">
+              	  <small *ngIf="userForm.controls['lastName'].touched 
+				&& userForm.controls['lastName'].errors?.['required']" class="text-white">
+				Field is required</small>
+			</div>
+		</div>
+        <br><br><br>
+        <!--TEXTAREA-->
+        <div class="form-group row">
+			<label for="email" class="col-sm-3 col-form-label">Email</label>
+			<div class="col-sm-9">
+			  <input formControlName="email" type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="user.email">
+			  <small *ngIf="userForm.controls['email'].touched 
+				&& userForm.controls['email'].errors?.['required']" class="text-white">
+				Field is required</small>
+			</div>
+		</div>
+        <br><br><br>
+          <br>
+		<br><br>
+		<br><br>
+                    <button *ngIf="edit" type="button" class="btn btn-primary m-3"
+                        (click)="editUser()" [disabled]="userForm.invalid">Edit</button>
+                    <div *ngIf="!edit">
+                        <button type="button" class="btn btn-primary m-3" (click)="resetForm()">Cancel</button>
+                        <button type="button" class="btn btn-primary m-3" (click)="updateUser()">OK</button>
+                    </div>
+			<br><br>
+	  </form>
+</div>

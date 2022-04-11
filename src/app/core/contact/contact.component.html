@@ -1,0 +1,94 @@
+<br />
+<div class="row">
+  <form
+    [formGroup]="messageForm"
+    (submit)="onSubmit()"
+    novalidate
+    class="col-8 offset-2"
+    action="http://www.thezarichi.com/testbed/form-response.php"
+    method="post"
+  >
+    <!--INPUT TEKST POLJE-->
+    <div class="form-group row">
+      <label for="name" class="col-sm-3 col-form-label">Name</label>
+      <div class="col-sm-9">
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          [(ngModel)]="message.name"
+        />
+        <small
+          *ngIf="messageForm.controls['name'].touched 
+				&& messageForm.controls['name'].errors?.['required']"
+          class="text-white"
+        >
+          Field is required</small
+        >
+      </div>
+    </div>
+    <br />
+    <br />
+    <!--INPUT TEKST-->
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">Email</label>
+      <div class="col-sm-9">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="message.email"
+        />
+        <small
+          *ngIf="messageForm.controls['email'].touched 
+				&& messageForm.controls['email'].errors?.['required']"
+          class="text-white"
+        >
+          Field is required</small
+        >
+      </div>
+    </div>
+    <br /><br /><br />
+    <!--TEXTAREA-->
+    <div class="form-group row">
+      <label for="description" class="col-2 col-form-label">Message</label>
+      <div class="col-10">
+        <textarea
+          formControlName="message"
+          id="message"
+          class="form-control"
+          name="message"
+          [(ngModel)]="message.message"
+        ></textarea>
+        <small
+          *ngIf="messageForm.controls['message'].touched 
+                        && messageForm.controls['message'].errors?.['required']"
+          class="text-white"
+          >Field is required</small
+        >
+        <small
+          *ngIf="messageForm.controls['message'].touched 
+                        && messageForm.controls['message'].errors?.['minLength']"
+          class="text-white"
+          >Field must contain at least 10 characters!
+        </small>
+      </div>
+    </div>
+    <br />
+    <br /><br />
+    <br /><br />
+    <button
+      class="btn btn-primary float-left"
+      type="submit"
+      [disabled]="messageForm.invalid"
+    >
+      Submit</button
+    >&nbsp; <br /><br />
+  </form>
+</div>

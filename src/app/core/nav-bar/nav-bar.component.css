@@ -1,0 +1,15 @@
+.carousel-item img {
+    width: 100%;
+    opacity: 0.7;
+    max-height: 65vh;
+    min-height: 350px;
+    background-size: contain;
+    object-fit: contain !important;
+   
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+

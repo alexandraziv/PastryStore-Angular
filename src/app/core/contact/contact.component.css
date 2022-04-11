@@ -1,0 +1,19 @@
+form {
+    background: linear-gradient(90deg, #620439 0%, #8799f7 100%);
+}
+
+label  {
+    background: linear-gradient(90deg, #620439 0%, #8799f7 100%);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+input::placeholder {
+    color: black;
+    font-weight: 900;
+}
+
+button {
+    background: linear-gradient(90deg, #620439 0%, #8799f7 100%);
+    size: 20%;
+}
